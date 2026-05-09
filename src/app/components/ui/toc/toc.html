@@ -1,0 +1,9 @@
+<h2>Nesta página</h2>
+<mat-nav-list>
+    @for (item of items; track $index) {
+    <a mat-list-item class="{{ item.level }}" [routerLink]="[]" fragment="{{ this.formatter.normalize(item.text) }}">
+        <span matListItemTitle>{{ item.text }}</span>
+    </a>
+    }
+</mat-nav-list>
+<hr class="divider">
