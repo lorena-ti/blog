@@ -1,0 +1,48 @@
+.post {
+    border-radius: .4em;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.post:hover {
+    background: color-mix(in srgb, var(--mat-sys-on-surface-variant) calc(var(--mat-sys-hover-state-layer-opacity) * 100%), transparent);
+}
+
+.post:active {
+    background: var(--mat-sys-secondary-container);
+}
+
+.title,
+.description,
+.tags {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.title {
+    -webkit-line-clamp: 2;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-clamp: 2;
+}
+
+.description {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.tags {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+
+.subtitle {
+    font-size: 1em;
+}
+
+.tag {
+    margin-right: .5em;
+}

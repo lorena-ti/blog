@@ -1,0 +1,17 @@
+<mat-card appearance="outlined" class="post" (click)="openPost()">
+    <div>
+        <mat-card-header>
+            <mat-card-title class="title">{{ post?.title }}</mat-card-title>
+            <mat-card-subtitle class="subtitle">{{ post?.date | date: "dd 'de' MMMM 'de' yyyy" }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <p class="description">{{ post?.description }}</p>
+            <div class="tags">
+                @for(tag of post?.tags; track $index) {
+                <mat-chip class="tag">{{ tag }}</mat-chip>
+                }
+            </div>
+        </mat-card-content>
+    </div>
+</mat-card>
