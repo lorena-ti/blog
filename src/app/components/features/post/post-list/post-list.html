@@ -1,0 +1,8 @@
+<h1>Últimos Artigos</h1>
+<div class="posts">
+    @for(post of getPagedPosts(); track $index) {
+    <app-post-preview [post]="post"></app-post-preview>
+    }
+</div>
+<mat-paginator (page)="handlePageEvent($event)" [length]="posts.length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+    [pageSizeOptions]="[5, 10, 25]" [showFirstLastButtons]="showFirstLastButtons"></mat-paginator>
