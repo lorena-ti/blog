@@ -1,0 +1,9 @@
+.back {
+    align-items: center;
+    display: flex;
+}
+
+.back * {
+    color: var(--mat-sys-on-surface);
+    font-size: 1.2em;
+}

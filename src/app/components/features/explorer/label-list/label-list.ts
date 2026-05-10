@@ -6,10 +6,11 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PostSource } from '../../../../services/post/post-source';
 import { TitleCasePipe } from '@angular/common';
 import { Formatter } from '../../../../services/util/formatter';
+import { BackArrow } from '../../../shared/back-arrow/back-arrow';
 
 @Component({
   selector: 'app-label-list',
-  imports: [MatButtonModule, MatChipsModule, MatIconModule, RouterLink, TitleCasePipe],
+  imports: [MatButtonModule, MatChipsModule, MatIconModule, RouterLink, TitleCasePipe, BackArrow],
   templateUrl: './label-list.html',
   styleUrl: './label-list.scss',
 })

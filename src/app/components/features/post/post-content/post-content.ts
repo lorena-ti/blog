@@ -9,11 +9,12 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownComponent } from "ngx-markdown";
 import { Toc } from '../../../ui/toc/toc';
+import { BackArrow } from '../../../shared/back-arrow/back-arrow';
 import { Scroller } from '../../../../services/util/scroller';
 
 @Component({
   selector: 'app-post-content',
-  imports: [DatePipe, MatChipsModule, MatIconModule, MarkdownComponent, Toc],
+  imports: [DatePipe, MatChipsModule, MatIconModule, MarkdownComponent, Toc, BackArrow],
   templateUrl: './post-content.html',
   styleUrl: './post-content.scss',
 })
