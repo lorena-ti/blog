@@ -9,6 +9,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MarkdownComponent } from "ngx-markdown";
 import { Toc } from '../../../ui/toc/toc';
+import { Scroller } from '../../../../services/util/scroller';
 
 @Component({
   selector: 'app-post-content',
@@ -22,7 +23,7 @@ export class PostContent {
   postContent = '';
 
   constructor(private route: ActivatedRoute, private postSource: PostSource, private formatter: Formatter,
-    private http: HttpClient, private cdr: ChangeDetectorRef) { }
+    private http: HttpClient, private cdr: ChangeDetectorRef, private scroller: Scroller) { }
 
   setUp() {
     // Get post year, month, id and slug
@@ -35,6 +36,9 @@ export class PostContent {
     this.getPostPath(year, month, id, slug)
     this.getPostContent();
     this.setHeadingsId();
+
+    // After loading content, scroll to current fragment
+    this.scroller.scrollToCurrentFragment();
   }
 
   getPostPath(year: string, month: string, id: string, slug: string) {
