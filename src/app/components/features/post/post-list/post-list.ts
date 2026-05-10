@@ -3,6 +3,7 @@ import { PostData } from '../../../../models/post/post-data';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { PostSource } from '../../../../services/post/post-source';
 import { PostPreview } from '../post-preview/post-preview';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -16,7 +17,8 @@ export class PostList implements OnInit {
   pageIndex = 0;
   showFirstLastButtons = true;
 
-  constructor(private postSource: PostSource, private cdr: ChangeDetectorRef, private matPaginatorIntl: MatPaginatorIntl) { }
+  constructor(private postSource: PostSource, private cdr: ChangeDetectorRef,
+    private matPaginatorIntl: MatPaginatorIntl, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.setUpPaginator();
@@ -33,10 +35,35 @@ export class PostList implements OnInit {
   }
 
   getPosts() {
-    this.postSource.getPosts().subscribe(posts => {
-      this.posts = posts;
-      this.cdr.detectChanges();
-    });
+    // Get path of the curretn route
+    const path = this.activatedRoute.snapshot.url[0]?.path;
+
+    // Filter posts by current path
+    if (path == 'categorias') {
+      // Get "category" param of the current route
+      const category = this.activatedRoute.snapshot.paramMap.get('category');
+
+      // Get posts by the category
+      this.postSource.getPostsByCategory(category).subscribe(posts => {
+        this.posts = posts;
+        this.cdr.detectChanges();
+      });
+    } else if (path == 'tags') {
+      // Get "tag" param of the current route
+      const tag = this.activatedRoute.snapshot.paramMap.get('tag');
+
+      // Get posts by the tag
+      this.postSource.getPostsByTag(tag)?.subscribe(posts => {
+        this.posts = posts;
+        this.cdr.detectChanges();
+      });
+    } else {
+      // Get posts without filtering
+      this.postSource.getPosts().subscribe(posts => {
+        this.posts = posts;
+        this.cdr.detectChanges();
+      });
+    }
   }
 
   getPagedPosts() {

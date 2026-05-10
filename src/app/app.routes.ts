@@ -3,6 +3,7 @@ import { PostList } from '../app/components/features/post/post-list/post-list';
 import { Journal } from './pages/journal/journal';
 import { PostContent } from './components/features/post/post-content/post-content';
 import { About } from './components/features/explorer/about/about';
+import { LabelList } from './components/features/explorer/label-list/label-list';
 
 export const routes: Routes = [
     { path: 'artigos', component: PostList },
@@ -13,4 +14,8 @@ export const routes: Routes = [
         ]
     },
     { path: 'sobre', component: About },
+    { path: 'categorias', component: LabelList, data: { type: 'category' } },
+    { path: 'categorias/:category', component: PostList },
+    { path: 'tags', component: LabelList, data: { type: 'tag' } },
+    { path: 'tags/:tag', component: PostList },
 ];

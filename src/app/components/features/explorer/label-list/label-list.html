@@ -1,0 +1,6 @@
+<h1 class="title">{{ path | titlecase}}</h1>
+<mat-chip-set>
+    @for (d of data; track $index) {
+        <mat-chip routerLink="/{{ path }}/{{ formatter.normalize(d) }}">{{ d }}</mat-chip>
+    }
+</mat-chip-set>
