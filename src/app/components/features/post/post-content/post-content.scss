@@ -1,0 +1,31 @@
+.title, .metadata {
+    margin-bottom: .6em;
+}
+
+.metadata {
+    align-items: center;
+    display: flex;
+}
+
+.date {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+}
+
+.date mat-icon {
+    height: 1.1em;
+}
+
+mat-chip {
+    font-size: .2em;
+}
+
+.dot {
+    background-color: var(--mat-sys-on-surface-variant);
+    border-radius: 50%;
+    display: inline-block;
+    height: .3em;
+    margin: 0 1em;
+    width: .3em;
+}

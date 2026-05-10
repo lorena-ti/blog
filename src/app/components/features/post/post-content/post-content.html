@@ -1,0 +1,22 @@
+<h1 class="title">{{ post?.title }}</h1>
+<div class="metadata">
+    <div class="date">
+        <mat-icon fontSet="fa-regular" fontIcon="fa-calendar"></mat-icon>
+        <p class="date">{{ post?.date | date: "dd 'de' MMMM 'de' yyyy" }}</p>
+    </div>
+    <span class="dot"></span>
+    <mat-chip-set>
+        @for(tag of post?.tags; track $index) {
+        <mat-chip>{{ tag }}</mat-chip>
+        }
+    </mat-chip-set>
+</div>
+
+<p>{{ post?.description }}</p>
+<hr class="divider">
+
+<div class="toc">
+    <app-toc></app-toc>
+</div>
+
+<markdown lineNumbers [data]="postContent" (ready)="setUp()"></markdown>
