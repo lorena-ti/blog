@@ -1,3 +1,35 @@
 .page {
     display: flex;
+    width: 90vw;
+}
+
+app-toc {
+    top: 64px;
+    position: sticky;
+}
+
+.content,
+.toc {
+    padding: 0 2em;
+}
+
+.content {
+    box-sizing: border-box;
+    width: 70%;
+}
+
+@media (max-width: 900px) {
+    .toc {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        width: 100vw;
+    }
 }

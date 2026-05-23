@@ -20,6 +20,7 @@
 
 <div class="toc">
     <app-toc></app-toc>
+    <hr class="divider">
 </div>
 
-<markdown lineNumbers [data]="postContent" (ready)="setUp()"></markdown>
+<markdown class="article" mermaid lineNumbers [data]="postContent" (ready)="setUp()"></markdown>

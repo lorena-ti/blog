@@ -34,3 +34,9 @@ mat-chip {
     border-radius: .4em;
     display: block;
 }
+
+@media (min-width: 900px) {
+    .toc {
+        display: none;
+    }
+}

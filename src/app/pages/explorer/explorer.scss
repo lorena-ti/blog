@@ -1,0 +1,13 @@
+.page {
+    width: 90vw;
+}
+
+.content {
+    padding: 0 2em;
+}
+
+@media (max-width: 600px) {
+    .page {
+        width: 100vw;
+    }
+}

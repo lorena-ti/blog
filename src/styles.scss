@@ -56,3 +56,83 @@ body {
   margin: 0;
   height: 100%;
 }
+
+p,
+markdown p {
+  font-size: 1.1em;
+}
+
+.article svg {
+  height: 30em;
+}
+
+markdown img {
+  border-radius: .4em;
+  max-width: 100%;
+}
+
+/* Table */
+/* Header */
+markdown table th {
+  background: #191919;
+}
+
+markdown table {
+  background-color: #262626;
+  border-collapse: collapse;
+  min-width: 100%;
+  text-align: center;
+  overflow-x: scroll;
+}
+
+/* Striped table */
+markdown table tr:nth-child(even) {
+  background: #323232;
+}
+
+markdown td, markdown th {
+  padding: .5em .6em;
+  text-align: center;
+}
+
+/* Code */
+/* Inline code */
+code:not([class^="language-"]) {
+  background-color: #262626 !important;
+  font-size: .8em;
+  padding: .1em .2em;
+}
+
+/* Code line background */
+code[class*="language-"] {
+  background: none !important;
+}
+
+/* Code background*/
+pre[class*="language-"] {
+  background-color: #262626 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block;
+  overflow-x: scroll;
+  padding: 1em;
+}
+
+.divider {
+  border: none;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+a {
+  font-size: 1.1em;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+h2, h3, h4, h5, h6 {
+  scroll-margin-top: 64px;
+}
+
+// Angular Material paginator
+.mat-mdc-paginator-range-label {
+  display: none;
+}

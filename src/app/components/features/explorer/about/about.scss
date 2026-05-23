@@ -1,4 +1,9 @@
-.links li a {
-    font-size: 1.16em;
-    color: var(--mat-sys-on-surface-variant);
+p {
+    width: 70%;
+}
+
+@media (max-width: 800px) {
+    p {
+        width: 100%;
+    }
 }
