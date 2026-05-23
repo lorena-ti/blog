@@ -4,10 +4,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { PostData } from '../../../../models/post/post-data';
 import { Router } from '@angular/router';
+import { MarkdownComponent } from "ngx-markdown";
 
 @Component({
   selector: 'app-post-preview',
-  imports: [DatePipe, MatCardModule, MatChipsModule],
+  imports: [DatePipe, MatCardModule, MatChipsModule, MarkdownComponent],
   templateUrl: './post-preview.html',
   styleUrl: './post-preview.scss',
 })

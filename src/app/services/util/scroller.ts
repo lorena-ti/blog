@@ -18,7 +18,7 @@ export class Scroller {
   }
 
   scrollTo(fragment: string | null) {
-    const markdown = document.querySelector('markdown');
+    const markdown = document.querySelector('.article');
 
     // Get the heading that has the fragment as the id
     const heading = markdown?.querySelector(`#${fragment}`);

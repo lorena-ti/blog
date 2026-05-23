@@ -88,7 +88,7 @@ export class PostContent {
   }
 
   setHeadingsId() {
-    const markdown = document.querySelector('markdown');
+    const markdown = document.querySelector('.article');
     if (!markdown) return;
 
     const headings = markdown.querySelectorAll('h2, h3, h4, h5, h6');

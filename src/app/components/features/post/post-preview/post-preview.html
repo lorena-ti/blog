@@ -1,4 +1,5 @@
 <mat-card appearance="outlined" class="post" (click)="openPost()">
+    <markdown class="cover" mermaid [src]="post?.coverDiagram"></markdown>
     <div>
         <mat-card-header>
             <mat-card-title class="title">{{ post?.title }}</mat-card-title>

@@ -23,7 +23,7 @@ export class Toc implements AfterViewInit {
   }
 
   setupObserver() {
-    const markdown = document.querySelector('markdown');
+    const markdown = document.querySelector('.article');
     if (!markdown) return;
 
     // Observe changes in the headings
