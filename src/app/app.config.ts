@@ -4,7 +4,7 @@ import LocalePt from '@angular/common/locales/pt';
 
 import { routes } from './app.routes';
 import { MERMAID_OPTIONS, provideMarkdown } from 'ngx-markdown';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, TitleCasePipe } from '@angular/common';
 
 registerLocaleData(LocalePt);
 
@@ -21,5 +21,6 @@ export const appConfig: ApplicationConfig = {
       }
     }),
     { provide: LOCALE_ID, useValue: 'pt-BR' },
+    TitleCasePipe
   ]
 };

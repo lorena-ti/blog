@@ -1,9 +1,12 @@
+import { TitleCasePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Formatter {
+  constructor(private titleCasePipe: TitleCasePipe) { }
+
   normalize(text: String) {
     return text.toLowerCase()
       // Decompose accents
@@ -16,5 +19,10 @@ export class Formatter {
       .trim()
       // Replace spaces with hyphens
       .replaceAll(/\s+/g, '-');
+  }
+
+  toTitle(text: string) {
+    // Normalize text, replace hyphens with spaces and transform it to title case
+    return this.titleCasePipe.transform(text.replaceAll('-', ' '))
   }
 }
