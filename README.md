@@ -1,59 +1,35 @@
 # Blog
+![](https://img.shields.io/badge/angular-black?style=for-the-badge&logo=angular&logoColor=white)
+![](https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript&logoColor=white)
+![](https://img.shields.io/badge/javascript-black?style=for-the-badge&logo=javascript&logoColor=white)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
+## Sobre
+Blog pessoal feito em [Angular](https://angular.dev/) para documentar meu aprendizado e projetos que irei desenvolver ao longo da graduação.
 
-## Development server
+Trata-se de um projeto de aprendizado e, portanto, pode não seguir as melhores práticas de implementação, bem como ainda não possui testes.
 
-To start a local development server, run:
+## Bibliotecas Utilizadas
+- [Angular Material](https://material.angular.dev) para componentes visuais;
+- [fontawesome-free](https://www.npmjs.com/package/@fortawesome/fontawesome-free) para ícones;
+- [gray-matter](https://www.npmjs.com/package/gray-matter) para obter metadados do frontmatter de arquivos markdown;
+- [fs-extra](https://www.npmjs.com/package/fs-extra) para buscar e obter o conteúdo de arquivos;
+- [ngx-markdown](https://www.npmjs.com/package/ngx-markdown) para renderizar markdown com:
+  - [marked](https://www.npmjs.com/package/marked) para converter markdown para HTML;
+  - [prismjs](https://www.npmjs.com/package/prismjs) e [prism-themes](https://www.npmjs.com/package/prism-themes) para destacar código;
+  - [mermaid](https://www.npmjs.com/package/mermaid) para renderizar diagramas.
 
-```bash
-ng serve
-```
+## Como Funciona
+- Os artigos do blog são arquivos markdown que ficam armazenados na pasta `/public/posts`, sempre separados por ano e mês e seguem a convenção de nome `id_titulo-do-post` (o id determina a ordem de exibição do artigo no blog);
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Com o `fs-extra`, uma busca recursiva por arquivos markdown é feita nessa pasta e o conteúdo de cada arquivo é obtido;
 
-## Code scaffolding
+- Cada arquivo possui um frontmatter com os metadados de cada artigo (diagrama de capa, título, categoria, data, descrição e tags), que são obtidos pelo `gray-matter`;
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Esses metadados são convertidos para o formato JSON e são armazenados no arquivo `posts-index.json`, que é utilizado para fazer a listagem de artigos;
 
-```bash
-ng generate component component-name
-```
+- Quando um artigo é selecionado pelo usuário, os dados que determinam a pasta onde ele está armazenado (ano e mês) e o nome do arquivo correspondente (id e título) são passados como parâmetros à rota `/artigos`;
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Os parâmetros são recuperados, o caminho do artigo é encontrado e o artigo é renderizado com o `ngx-markdown`.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Licença
+Este projeto está sob a [licença MIT](LICENSE.md).
