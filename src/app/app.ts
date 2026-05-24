@@ -12,6 +12,7 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
+  currentYear = new Date().getFullYear();
 
   constructor(private router: Router, private formatter: Formatter, private title: Title) { }
 

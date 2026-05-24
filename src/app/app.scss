@@ -7,5 +7,22 @@ header {
 .page {
     display: flex;
     justify-content: center;
+    margin-bottom: -8em;
+    min-height: calc(100vh - 64px);
     width: 100vw;
+}
+
+footer, .push {
+    height: 8em;
+}
+
+footer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+footer * {
+    font-size: 1em;
 }
